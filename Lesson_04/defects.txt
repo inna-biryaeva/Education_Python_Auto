@@ -1,0 +1,40 @@
+БАГ-РЕПОРТ 1: Метод Contains возвращает True для подстроки вместо одиночного символа.
+Описание: Метод contains вместо одиночного символа считывает подстроку любой длины.
+
+Шаги для воспроизведения:
+1) Вызвать метод contains набором кода:
+@pytest.mark.negative
+@pytest.mark.parametrize("input_str, symbol, expected", [
+        ("Season", "ea", False)
+])
+def test_contains_negative(input_str, symbol, expected):
+    assert string_utils.contains(input_str, symbol) == expected
+2) Вызвать в терминале команду pytest -v.
+
+Ожидаемый результат: False ("ea" является подстрокой из двух символов).
+Фактический результат: True.
+Приоритет: High.
+Серьёзность: Critical.
+Окружение: Windows 10 Pro, Python 3.13.
+
+БАГ-РЕПОРТ 2: Метод Contains возвращает True при проверке пустой строки вместо одиночного символа.
+Описание: Метод contains вместо одиночного символа считывает пустую строку.
+
+Шаги для воспроизведения:
+1) Вызвать метод contains набором кода, например:
+@pytest.mark.negative
+@pytest.mark.parametrize("input_str, symbol, expected", [
+  ("Spartak", "", False)
+])
+def test_contains_negative(input_str, symbol, expected):
+    assert string_utils.contains(input_str, symbol) == expected
+2) Вызвать в терминале команду pytest -v.
+
+Ожидаемый результат: False ("" является пустой строкой).
+Фактический результат: True.
+Приоритет: High.
+Серьёзность: Critical.
+Окружение: Windows 10 Pro, Python 3.13.
+
+Утилита ожидаемо реагирует на неуказанные типы данных, такие как int и None, "роняя" тесты.
+Утилита не учитывает наличие в середине текста имён собственных в классе Capitalize (см. строку 13).
