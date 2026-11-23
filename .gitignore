@@ -5,6 +5,18 @@ allure-result/*
 !allure-result/.gitkeep
 allure-report/*
 !allure-report/.gitkeep
+# --- Allure ---
+# 1. Игнорируем всё содержимое внутри папок
+allure-results/*
+allure-report/*
+
+# 2. Разрешаем Git'у видеть сами папки
+!allure-results/
+!allure-report/
+
+# 3. Разрешаем добавлять файл .gitkeep
+!allure-results/.gitkeep
+!allure-report/.gitkeep
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
