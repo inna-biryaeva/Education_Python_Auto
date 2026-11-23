@@ -1,22 +1,15 @@
+# --- Homework 10 ---
+# Игнорируем ВСЁ содержимое папок allure внутри Lesson_10
+Lesson_10/allure-results/*
+Lesson_10/allure-report/*
+
+# Но разрешаем файл-маркер .gitkeep
+!Lesson_10/allure-results/.gitkeep
+!Lesson_10/allure-report/.gitkeep
+
+# Игнорируем папку прошлого урока (если она не нужна в этой ветке)
 Lesson_09/
-allure-results/*
-!allure-results/.gitkeep
-allure-result/*
-!allure-result/.gitkeep
-allure-report/*
-!allure-report/.gitkeep
-# --- Allure ---
-# 1. Игнорируем всё содержимое внутри папок
-allure-results/*
-allure-report/*
 
-# 2. Разрешаем Git'у видеть сами папки
-!allure-results/
-!allure-report/
-
-# 3. Разрешаем добавлять файл .gitkeep
-!allure-results/.gitkeep
-!allure-report/.gitkeep
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
